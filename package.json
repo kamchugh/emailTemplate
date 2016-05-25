@@ -15,5 +15,12 @@
   "bugs": {
     "url": "https://github.com/kamchugh/emailTemplate/issues"
   },
-  "homepage": "https://github.com/kamchugh/emailTemplate#readme"
+  "homepage": "https://github.com/kamchugh/emailTemplate#readme",
+  "dependencies": {
+    "body-parser": "^1.15.1",
+    "express": "^4.13.4",
+    "express-handlebars": "^3.0.0",
+    "mysql": "^2.10.2",
+    "sql": "^0.69.0"
+  }
 }

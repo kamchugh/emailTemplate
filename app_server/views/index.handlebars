@@ -1,0 +1,38 @@
+<h1> Index handlebars </h1>
+
+<h4> Add a new item </h4>
+
+<form action="/products" method=POST> 
+<input type='text' name='productName' placeholder='productName'>
+<input type='text' name='productDescription' placeholder='productDescription'>
+<input type='text' name='productImage' placeholder='productImage'>
+<button type='submit'> Submit </button>
+</form>
+
+<br> 
+
+{{#each todos}}
+
+<br> 
+{{this.productName}}
+
+<br> 
+{{this.productDescription}}
+
+<br> 
+<img src="{{this.productImage}}" alt="Mountain View" style="width:304px;height:228px;">
+<br>
+{{this.id}}
+<br>
+
+<a href = "" > Delete </a>
+Edit
+<form action="/edit" method=PUT> 
+<input type='text' name='productName' value='{{this.productName}}'>
+<input type='text' name='productDescription' value='{{this.productDescription}}'>
+<input type='text' name='productImage' value='{{this.productImage}}'>
+<input type='text' name='id' value='{{this.id}}'>
+<button type='submit'> Submit </button>
+</form>
+
+{{/each}}

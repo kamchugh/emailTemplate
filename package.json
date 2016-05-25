@@ -1,0 +1,19 @@
+{
+  "name": "emailtemplate",
+  "version": "1.0.0",
+  "description": "A program to easily create weekly emails for subscription based companies",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kamchugh/emailTemplate.git"
+  },
+  "author": "Kaylee McHugh",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kamchugh/emailTemplate/issues"
+  },
+  "homepage": "https://github.com/kamchugh/emailTemplate#readme"
+}

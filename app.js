@@ -18,9 +18,6 @@ app.set('view engine', 'handlebars');
 
 app.use('/', require('./app_server/routes/index'));
 
-app.use('/products', require('./app_server/routes/index'));
-
-app.use('/edit', require('./app_server/routes/index'));
 
 //custom 404
 app.use(function(req, res){

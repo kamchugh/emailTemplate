@@ -13,21 +13,22 @@
 
 {{#each todos}}
 
+Product Name:  {{this.productName}}
 <br> 
-{{this.productName}}
+Product Description: {{this.productDescription}}
 
 <br> 
-{{this.productDescription}}
+<img src="{{this.productImage}}" alt="Mountain View" style="width:150px;height:120px;">
 
 <br> 
-<img src="{{this.productImage}}" alt="Mountain View" style="width:304px;height:228px;">
+
+<button class = "deleteButton" name = "{{this.id}}" > Delete </button>
 <br>
-{{this.id}}
-<br>
 
-<a href = "" > Delete </a>
+
+
 Edit
-<form action="/edit" method=PUT> 
+<form action="/edit/{{this.id}}" method=POST> 
 <input type='text' name='productName' value='{{this.productName}}'>
 <input type='text' name='productDescription' value='{{this.productDescription}}'>
 <input type='text' name='productImage' value='{{this.productImage}}'>
@@ -36,3 +37,32 @@ Edit
 </form>
 
 {{/each}}
+
+<script>
+var arr = [];
+
+arr = document.getElementsByClassName("deleteButton");
+
+for(var i = 0; i < arr.length; i ++) {
+	arr[i].addEventListener("click", function(e) {
+		var id  = e.target.name; 
+		var xhr = new XMLHttpRequest();
+
+		xhr.open('DELETE', '/delete/' + id);
+
+		xhr.onreadystatechange = function() {
+		    if (xhr.readyState === 4 && xhr.status < 400) {
+		        location.reload(true);
+		    }
+
+		    if (xhr.readyState === 4 && xhr.status >= 400) {
+		        console.error(xhr.status + ': ' + xhr.responseText);
+		    }
+		};
+
+		xhr.send(null);
+	});
+
+}
+
+</script>

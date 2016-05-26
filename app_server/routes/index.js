@@ -7,7 +7,9 @@ router.get('/', ctrlMain.index);
 
 router.post('/products', ctrlMain.products);
 
-router.put('/edit', ctrlMain.edit);
+router.post('/edit/:id', ctrlMain.edit);
+
+router.delete('/delete/:id', ctrlMain.delete);
 
 /*Get image by counter*/
 // router.get('/slideshow', ctrlMain.display);

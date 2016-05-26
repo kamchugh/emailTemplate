@@ -1,44 +1,85 @@
-<h1> Index handlebars </h1>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+<div id = "headerContent">
+<h1 id = "headerText"> Generate the Pets Best Monthly Email </h1>
+<h2> Add a product to your email for Pets Best </h2>
+	<form action="/products" method=POST> 
+	<input type='text' name='productName' placeholder='productName'>
+	<input type='text' name='productDescription' placeholder='productDescription'>
+	<input type='text' name='productImage' placeholder='productImage'>
+	<button type='submit'> Submit </button>
+	</form>
+	<h2> Edit and delete </h2>
+</div>
 
-<h4> Add a new item </h4>
-
-<form action="/products" method=POST> 
-<input type='text' name='productName' placeholder='productName'>
-<input type='text' name='productDescription' placeholder='productDescription'>
-<input type='text' name='productImage' placeholder='productImage'>
-<button type='submit'> Submit </button>
-</form>
-
-<br> 
-
+<div id = "outerFlex"> 
 {{#each todos}}
-
-Product Name:  {{this.productName}}
-<br> 
-Product Description: {{this.productDescription}}
-
-<br> 
-<img src="{{this.productImage}}" alt="Mountain View" style="width:150px;height:120px;">
-
-<br> 
-
-<button class = "deleteButton" name = "{{this.id}}" > Delete </button>
-<br>
-
-
-
-Edit
-<form action="/edit/{{this.id}}" method=POST> 
-<input type='text' name='productName' value='{{this.productName}}'>
-<input type='text' name='productDescription' value='{{this.productDescription}}'>
-<input type='text' name='productImage' value='{{this.productImage}}'>
-<input type='text' name='id' value='{{this.id}}'>
-<button type='submit'> Submit </button>
-</form>
-
+	<div class="innerFlex">
+		<p> Product Name:  {{this.productName}} </p>
+		
+		<p> Product Description: {{this.productDescription}} </p>
+		
+		<img class= "topImage" src="{{this.productImage}}" alt="Mountain View" style="width:150px;height:120px;">
+		<br>
+		
+		<button class = "deleteButton" name = "{{this.id}}" > Delete </button>
+		
+		<p class = "editBread"> Click here to Edit <p>
+		<form style = "display:none;" class = "editMeat" action="/edit/{{this.id}}" method=POST> 
+			<input type='text' name='productName' value='{{this.productName}}'>
+			<input type='text' name='productDescription' value='{{this.productDescription}}'>
+			<input type='text' name='productImage' value='{{this.productImage}}'>
+			<button type='submit'> Submit </button>
+		</form>
+	</div>
 {{/each}}
+</div>
+<div id="emailDiv">
+
+	<h1> A sample of your email is below </h1> 
+	<div id = "emailSample"> 
+
+			<table>
+				<tr> 
+					<th style="font-size: 35px;" class = "tableHeader" colspan="2"> Pets Best Monthly Box </th>
+				</tr>
+				<tr>
+					<td style="font-size: 25px;" class = "tableHeader" colspan="2"> Your monthly box of canine goodies is on its way! </td>
+				<tr> 
+				{{#each todos}}
+				<tr>
+					<td class= "productName"colspan="2"> {{this.productName}} </td>
+				</tr>
+				<tr>
+					<td>  <img class="emailImage" src="{{this.productImage}}" alt="image did not load" style="width:250px;height:170px;"> </td>
+					<td> {{this.productDescription}} </td>
+				</tr>
+				{{/each}}
+			</table>
+	</div>
+</div>
+
+
+<h1 id = "getHTML"> Get the full html here </h1>
+
+
 
 <script>
+
+$(document).ready(function(){
+    $(".editBread").click(function(){
+        $(".editMeat").slideToggle("slow");
+    });
+});
+
+$(document).ready(function(){
+    $("#getHTML").click(function(){
+        alert($("#emailSample").html());
+    });
+});
+
+
+
+
 var arr = [];
 
 arr = document.getElementsByClassName("deleteButton");

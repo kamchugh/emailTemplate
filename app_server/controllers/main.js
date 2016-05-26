@@ -19,11 +19,7 @@ module.exports.products = function(req, res){
 
 module.exports.edit = function(req, res){
 
-    console.log("I hit the edit route");
-    console.log("product name: " + req.body.productName);
-    console.log("product description: " + req.body.productDescription);
-    console.log("product image: " + req.body.productImage);
-    console.log("product id: " + req.params.id);
+    
     console.log("update sections SET productName = '" + req.body.productName + "' , productDescription = ' " + req.body.productDescription 
       + " ' , productImage = ' " + req.body.productImage + " '  WHERE id = " + req.params.id + ";");
     mysql.getConnection(function(err, con){

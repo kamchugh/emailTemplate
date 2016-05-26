@@ -1,0 +1,164 @@
+h1, h2 {
+	color: 	#69a8ff;
+	font-family: 'Chewy', cursive;
+}
+
+h1 {
+	font-size: 40px;
+}
+
+h2 {
+	font-size: 30px;
+}
+
+th {
+	font-family: 'Chewy', cursive;
+	padding-top: 20px;
+	
+}
+
+
+td {
+	font-family: 'Chewy', cursive;
+	padding-left: 20px;
+	padding-right: 10px;
+
+}
+
+.tableHeader {
+	color: white;
+	text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+.productName {
+	color: #ff6f69;
+	font-size: 20px;
+	background-color: rgba(255, 111, 105, .3);
+
+	
+
+
+}
+
+body {
+		background-color: #ffeead;
+}
+
+#outerFlex {
+
+	
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	flex-wrap: wrap;
+	text-align: center;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	    -ms-flex-align: center;
+	        align-items: center
+
+}
+
+#emailDiv {
+	margin: 0 auto;
+	text-align: center;
+}
+
+#getHTML {
+	text-align: center;
+}
+
+.tableHeader {
+	background-color: #ffcc5c;
+}
+
+table {
+	margin-left: auto;
+	margin-right: auto;
+	background-color: #ffeead;
+	padding: 10px;
+	padding-left: 20px;
+	padding-right: 20px;
+	border-color: #ffcc5c;
+	border-style: solid;
+	border-collapse:collapse;
+
+}
+
+.innerFlex {
+		background-color: white;
+	width: 25%;
+	align-self: baseline;
+	background-color: 	rgba(255, 111, 105, .5);
+	margin: 10px;
+	padding: 10px 15px 10px 15px;
+	text-decoration: none;
+	color: black;
+	font-family: 'Chewy', cursive;	
+	text-decoration: none !important;
+	border-color: #ff6f69;
+	border-width: 10px;	
+	border-style: solid;
+
+}
+
+.topImage {
+	border-color: #ff6f69;
+	border-style: solid;
+}
+
+.emailImage {
+	border-color: #88d8b0;
+	border-style: solid;
+}
+
+img {
+	 margin-bottom: 10px;
+}
+
+#headerContent {
+	text-align: center;
+}
+
+#headerText {
+		background-color: #ffcc5c;
+		padding-top: 40px;
+		padding-bottom: 20px;
+		margin-left: -10px;
+		margin-right: -10px;
+		margin-top: -20px;
+}
+
+th {
+	font-size: 20px;
+}
+
+td {
+	padding-top: 10px;
+	padding-bottom: 10px;
+	padding-right: 10px;
+}
+
+
+
+input {
+	padding: 5px;
+	margin-left: 5px;
+	margin-right: 5px;
+	border-color: #ffcc5c;
+	font-family: 'Chewy', cursive;	
+	font-size: 15px;
+}
+
+button {
+	font-family: 'Chewy', cursive;	
+	font-size: 15px;
+	background-color: #ffeead; 
+	padding-left: 10px;
+	padding-right: 10px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	border-color: #ffcc5c;
+	border-style: solid;
+}

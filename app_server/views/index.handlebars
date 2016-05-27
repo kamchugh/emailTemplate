@@ -57,11 +57,89 @@
 			</table>
 	</div>
 </div>
+<h1 id = "getHTML"> Get the full html </h1>
+<div class = "textArea textArea1"> 
+	<textarea rows="10" cols="75">
+	<!doctype html>
+		<html>
+			<head>
+			  <title>Pets Best Monthly Email </title>
+			  <link href='https://fonts.googleapis.com/css?family=Covered+By+Your+Grace' rel='stylesheet' type='text/css'>
+			  <link href='https://fonts.googleapis.com/css?family=Chewy' rel='stylesheet' type='text/css'>
+			  <link rel="stylesheet" type="text/css" href="main.css"> 
+			</head>
+			<body>
+				<table>
+					<tr> 
+						<th style="font-size: 35px;" class = "tableHeader" colspan="2"> Pets Best Monthly Box </th>
+					</tr>
+					<tr>
+						<td style="font-size: 25px;" class = "tableHeader" colspan="2"> Your monthly box of canine goodies is on its way! </td>
+					<tr> 
+					{{#each todos}}
+					<tr>
+						<td class= "productName"colspan="2"> {{this.productName}} </td>
+					</tr>
+					<tr>
+						<td>  <img class="emailImage" src="{{this.productImage}}" alt="image did not load" style="width:250px;height:170px;"> </td>
+						<td> {{this.productDescription}} </td>
+					</tr>
+					{{/each}}
+				</table>
+			</body>
+		</html>
+	</textarea>
+</div>
+<h1 id = "getStylesheet"> Get the style sheet </h1>
+<div class = "textArea textArea2"> 
+	<textarea rows="10" cols="75">
 
+	th {
+		font-family: 'Chewy', cursive;
+		padding-top: 20px;
+		font-size: 20px;
 
-<h1 id = "getHTML"> Get the full html here </h1>
-
-
+	}
+	td {
+		padding-top: 10px;
+		padding-bottom: 10px;
+		padding-right: 10px;
+		font-family: 'Chewy', cursive;
+		padding-left: 20px;
+		padding-right: 10px;
+	}
+	.tableHeader {
+	color: white;
+	text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+	}
+	.productName {
+	color: #ff6f69;
+	font-size: 20px;
+	background-color: rgba(255, 111, 105, .3);
+	}
+	.tableHeader {
+	background-color: #ffcc5c;
+	}
+	table {
+	margin-left: auto;
+	margin-right: auto;
+	background-color: #ffeead;
+	padding: 10px;
+	padding-left: 20px;
+	padding-right: 20px;
+	border-color: #ffcc5c;
+	border-style: solid;
+	border-collapse:collapse;
+	}
+	img {
+	 margin-bottom: 10px;
+	 margin-top: 10px;
+	}
+	</textarea>
+</div>
+<div id="footerDiv">
+<p> Painstakingly brought into this world by Kaylee McHugh. </p> 
+</div>
 
 <script>
 
@@ -73,11 +151,15 @@ $(document).ready(function(){
 
 $(document).ready(function(){
     $("#getHTML").click(function(){
-        alert($("#emailSample").html());
+        $(".textArea1").slideToggle("slow");
     });
 });
 
-
+$(document).ready(function(){
+    $("#getStylesheet").click(function(){
+        $(".textArea2").slideToggle("slow");
+    });
+});
 
 
 var arr = [];
